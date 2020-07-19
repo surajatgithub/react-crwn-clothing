@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 
+import Header from "./components/header/header.component";
 import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
 
@@ -13,10 +14,13 @@ class App extends Component {
   }
   render() {
     return (
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/shop" component={ShopPage} />
-      </Switch>
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path="/shop" component={ShopPage} />
+          <Route path="/" component={HomePage} />
+        </Switch>
+      </div>
     );
   }
 }
